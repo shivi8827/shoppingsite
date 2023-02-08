@@ -1,0 +1,57 @@
+{% extends 'shop/basic.html' %}
+{% block title %} Login {% endblock %}
+{% block body %}
+
+
+<div class="container">
+    <div class="p-4 m-4 ">
+    </div>
+    <div class="col-lg-5 mt-4 mb-4 mx-auto border rounded pt-3 pb-3">
+  
+      <form action="/shop/login/" method="POST">
+        {% csrf_token %}
+        {% if error %}
+        <div class="alert alert-danger" role="alert">
+          {{error}}
+        </div>
+        {% endif %}
+         
+             
+                <div class="form-group">
+                    <h4><b>Login</b></h4>
+                    <label for="InputEmail1">Email address</label>
+                    <input type="email" class="form-control form-control-sm " id="InputEmail1" name="email" value="{{values.email}}" aria-describedby="emailHelp" placeholder="Enter email">
+                    
+                  </div>
+  
+                  <div class="form-group">
+                    <label for="InputPassword1">Password</label>
+                    <input required type="password" class="form-control form-control-sm" id="InputPassword1" name="password" placeholder="**********">
+                  </div>
+                  
+
+                  
+                  
+                  <button type="submit" class="btn btn-primary col-lg-4" value="login">Login</button>   
+                        
+                </form>   
+     
+      </div>
+     </div>
+  </div>
+</div>
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+

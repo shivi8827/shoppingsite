@@ -1,0 +1,59 @@
+{% extends 'shop/basic.html' %}
+{% block title %}{{product.products_name}} Your Orders {% endblock %}
+{% block body %}
+{%load static%}
+    
+
+<div class="container-fluid row">
+    <div class="col-lg-12">
+        <div class="box-element">
+            <a href="/shop" class="btn btn-outline-dark"><h3>&#x2190 Continue Shopping</h3></a>
+            <br><br>
+            <table class="table">
+                <tr>
+                    <th>
+                        <h5>Items: <strong></strong></h5>
+                    </th>
+                    <th>
+                        <h5>Total: <strong></strong></h5>
+                    </th>
+                    <th><a href="/shop/checkout" class="btn btn-success" style="float: right; margin: 5px;">Checkout</a>
+                    </th>
+                </tr>
+            </table>
+        </div>
+<br>
+        <div class="box-element">
+            <div class="cart-row">
+                <div style="flex: 2;"><strong>Image</strong></div>
+                <div style="flex: 2;"><strong>Item</strong></div>
+                <div style="flex: 1;"><strong>Price</strong></div>
+                <div style="flex: 1;"><strong>Quantity</strong></div>
+                <div style="flex: 1;"><strong>Total</strong></div>
+            </div>
+        
+            <div class="cart-row">
+                <div style="flex: 2;"><img class="row-image" src="" alt=""></div>
+                <div style="flex: 2;"></div>
+                <div style="flex: 1;"></div>
+                <div style="flex: 1;">
+                <p class="quantity"></p>
+                <div class="quantity">
+                    <img data-product="" data-action="add" src="/media/{{product.image}}" class="chg-quantity update-cart" alt="">
+                    <img data-product="" data-action="remove" src="/media/{{product.image}}" class="chg-quantity update-cart" alt="">
+                </div>
+                </div>
+                <div style="flex: 1;"></div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+{% endblock %}
+

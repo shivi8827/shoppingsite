@@ -1,0 +1,70 @@
+{% extends 'shop/basic.html' %}
+{% block title %} Contact page {% endblock %}
+{% block body %} 
+<div class="container">
+
+   
+    
+<div class="container">
+    <div class="p-4 m-4 ">
+    </div>
+    <div class="col-lg-5 mt-4 mb-4 mx-auto border rounded pt-3 pb-3">
+  
+      <form action="/shop/sng/" method="POST">
+        {% csrf_token %}
+        {% if error %}
+        <div class="alert alert-danger" role="alert">
+          {{error}}
+         </div>
+
+        {% endif %}
+         
+             
+                <div class="form-group">
+                    <h4><b>SignUp</b></h4>
+
+                    <div class="form-group">
+                        <label for="Inputfirst_name">First Name</label>
+                        <input type="first_name" value="{{values.first_name}}" class="form-control form-control-sm" id="Inputfirst_name" name="first_name">
+                      </div>
+
+                   
+
+                      <div class="form-group">
+                    <label for="Inputlast_name">Last Name</label>
+                    <input  type="last_name " value="{{values.last_name}}" class="form-control form-control-sm " id="Inputlast_name" name="last_name">
+                    
+                  </div>
+
+                  <div class="form-group">
+                    <label for="inputPhone">Phone Number</label>
+                    <input type="phone" value="{{values.phone}}" class="form-control form-control-sm" id="inputPhone" name="phone" placeholder="Enter Phone Number">
+                  </div>
+
+
+                <div class="form-group">
+                <label for="InputEmail1">Email address</label>
+                <input type="email" value="{{values.email}}"  class="form-control form-control-sm " id="InputEmail1" name="email" value="{{values.email}}" aria-describedby="emailHelp" placeholder="Enter email">
+                
+              </div>
+                  
+  
+                  <div class="form-group">
+                    <label for="InputPassword1">Password</label>
+                    <input type="password" value="{{values.password}}" class="form-control form-control-sm" id="InputPassword1" name="password" placeholder="**********">
+                  </div>
+                  
+
+                  
+                  
+                  <button type="submit" href="/shop/home" class="btn btn-primary col-lg-4" value="login">SignUp</button>   
+                        
+                </form>   
+     
+      </div>
+     </div>
+  </div>
+</div>
+
+ 
+{% endblock %}
